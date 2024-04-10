@@ -1,5 +1,5 @@
 CREATE TABLE usuarios (
-  id INT auto_increment PRIMARY KEY,
+  id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(100),
   email VARCHAR(100),
   nascimento DATE,
@@ -8,34 +8,41 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE seguidores (
- id INT auto_increment PRIMARY KEY,
+ id INT AUTO_INCREMENT PRIMARY KEY,
  nome VARCHAR(100)
 );
   
 CREATE TABLE posts (
-id INT auto_increment PRIMARY KEY,
-imagem BLOOB,
+id INT AUTO_INCREMENT PRIMARY KEY,
+imagem BLOB,
 data DATETIME,
 texto TEXT,
-usuarios_id,
-like INT
+usuarios_id INT,
+likes INT
 );
 
 CREATE TABLE storys (
-id INT auto_increment PRIMARY KEY,
-usuarios_id,
-descrição VARCHAR(254)
+id INT AUTO_INCREMENT PRIMARY KEY,
+usuarios_id INT,
+descricao VARCHAR(254)
 );
 
 CREATE TABLE seguidores_usuarios (
-id INT auto_increment PRIMARY KEY,
-seguidores_id,
-usuarios_id
+id INT AUTO_INCREMENT PRIMARY KEY,
+seguidores_id INT,
+usuarios_id INT
 );
 
 CREATE TABLE comentarios (
-id INT,
-posts_id,
-usuarios_id,
+id INT AUTO_INCREMENT PRIMARY KEY,
+posts_id INT,
+usuarios_id INT,
 texto TEXT
 );
+
+SELECT * FROM usuarios;
+SELECT * FROM seguidores;
+SELECT * FROM posts;
+SELECT * FROM storys;
+SELECT * FROM seguidores_usuarios;
+SELECT * FROM comentarios;
